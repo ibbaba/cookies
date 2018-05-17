@@ -33,13 +33,13 @@
 			// Cookies 
 			// Opt-out Funktionalität
 			function gaOptout() {
-				document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; domain=jenzmm.de; path=/';
+				document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; domain=DOMAIN.de; path=/';
 				window[disableStr] = true;
 				console.log("Analytics wurde deaktiviert");
 			}
 			// Opt-in Funktionalität
 			function gaOptin() {
-				document.cookie = disableStr + '=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; domain=jenzmm.de; path=/';
+				document.cookie = disableStr + '=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; domain=DOMAIN.de; path=/';
 				window[disableStr] = false;
 				console.log("Analytics wurde aktiviert");
 			}
