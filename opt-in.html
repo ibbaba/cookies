@@ -46,6 +46,14 @@
 			
 			
 			var documentLang = document.querySelector("html").getAttribute("lang");
+			
+			function setGermanAndEnglilch( german, english) {
+				if (documentLang != "de-de") {
+					return english;
+				} else {
+					return german;
+				}
+			}
 
 			// Hinweis Einstellungen
 			window.addEventListener("load", function(){	
@@ -62,18 +70,22 @@
 						}
 					},
 					"content": {
-						"message": (function() {
-							if (documentLang != "de") {
-								console.log("nicht deutsch");
-								return "blablabla";
-							} else {
-								console.log("deutsch");
-								return "Wir verwenden Cookies, um die Zugriffe auf unserer Website zu analysieren.";
-							}
-						})(),
-						"dismiss": "Ablehnen",
-						"allow": "Cookies erlauben",
-						"link": "Mehr erfahren",
+						"message": setGermanAndEnglilch(
+							"Wir verwenden Cookies und Google Analytics, um die Zugriffe auf unserer Website zu analysieren.", 
+							"We use cookies and Google Analytics to analyse access to our website."
+						),
+						"dismiss": setGermanAndEnglilch(
+							"Ablehnen", 
+							"Dismiss"
+						),
+						"allow": setGermanAndEnglilch(
+							"Erlauben", 
+							"Allow"
+						),
+						"link": setGermanAndEnglilch(
+							"Datenschutzerklärung", 
+							"Privacy policy"
+						),
 						"href": "#"
 					},
 					"type": "opt-in",
